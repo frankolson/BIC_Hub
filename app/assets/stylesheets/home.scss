@@ -1,3 +1,13 @@
 .info-block {
   margin-top: 60px;
 }
+
+#img-preview {
+  padding: 5px;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  img {
+    width: 35px;
+    height: 35px;
+  }
+}

@@ -24,6 +24,7 @@ source 'https://rails-assets.org' do
 end
 gem 'devise'
 gem 'simple_form'
+gem 'carrierwave', '~> 1.0' 
 
 group :development, :test do
   gem 'byebug', platform: :mri
