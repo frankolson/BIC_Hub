@@ -7,4 +7,5 @@ class Post < ApplicationRecord
   validates_presence_of :user
 
   acts_as_votable
+  acts_as_commentable
 end

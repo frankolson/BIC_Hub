@@ -31,6 +31,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'
 end
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'acts_as_commentable'
 
 
 

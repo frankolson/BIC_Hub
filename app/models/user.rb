@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :events
+  has_many :comments
 
   acts_as_voter
 
