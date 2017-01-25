@@ -12,9 +12,12 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
+
+
+
+
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'font-awesome-rails'
@@ -27,6 +30,10 @@ gem 'carrierwave', '~> 1.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-datetimepicker'
 end
+gem 'acts_as_votable', '~> 0.10.0'
+
+
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
