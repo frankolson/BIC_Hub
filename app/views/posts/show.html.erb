@@ -1,3 +1,13 @@
 <div id="post-<%= @post.id %>" class="col-md-6 offset-md-3">
   <%= render 'post' %>
+  <br>
+  <div class="card card-block">
+    <div class="card-heading">
+      <h5>Comments</h5>
+      <hr>
+    </div>
+    <div class="card-text">
+      <%= render 'comments/form', commentable: @post %>
+    </div>
+  </div>
 </div>

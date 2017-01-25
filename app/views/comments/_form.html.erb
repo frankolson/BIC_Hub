@@ -1,0 +1,13 @@
+<%= simple_form_for comments_path( commentable_type: commentable.class.to_s,
+                                   commentable_id: commentable.id),
+                                   method: :post, remote: true do |f| %>
+  <div class="form-group">
+    <%= f.input :comment, placeholder: 'Enter Comment',
+                          label: false,
+                          as: :text %>
+  </div>
+
+  <div class="form-group">
+    <%= f.button :submit, "Comment", class: "btn-primary" %>
+  </div>
+<% end %>
