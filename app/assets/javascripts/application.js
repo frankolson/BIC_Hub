@@ -13,6 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require tether
-//= require bootstrap-datepicker
 //= require bootstrap-sprockets
+//= require jquery.datetimepicker
 //= require_tree .
