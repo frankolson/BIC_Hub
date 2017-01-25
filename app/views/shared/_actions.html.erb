@@ -3,5 +3,12 @@
     <div class="col-sm-6 like">
       <%= render 'likes/form', likeable: resource %>
     </div>
+    <div class="col-sm-6 comment">
+        <%= button_to resource, class: 'btn btn-block',
+                                style: 'cursor: pointer',
+                                method: :get do %>
+          <%= fa_icon 'comment' %> comment
+        <% end %>
+      </div>
   </div>
 <% end %>
