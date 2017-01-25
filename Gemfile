@@ -23,9 +23,11 @@ gem 'bootstrap-datepicker-rails'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'letter_opener'
 end
 
 group :development do
