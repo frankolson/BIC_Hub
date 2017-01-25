@@ -4,11 +4,32 @@
     <title>BIChub</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav class="navbar static-top navbar-light bg-faded">
+        <div class="container">
+          <%= link_to 'BIC Hub', root_path, class: 'navbar-brand' %>
+          <% if !user_signed_in? %>
+            <div class="float-sm-right right-buttons">
+              <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn" %>
+            </div>
+            <div class="float-sm-right right-buttons">
+              <%= link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn" %>
+            </div>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container yield-start">
+      <%= flash_messages %>
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
