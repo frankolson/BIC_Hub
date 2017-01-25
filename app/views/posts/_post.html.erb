@@ -1,0 +1,36 @@
+<div class="card card-block">
+  <div class="card-heading">
+    <h5 class="name"><%= @post.user.name %></h5>
+    <span class="text-muted">created a <%= link_to 'post', @post %></span>
+  </div>
+  <div class="card-text">
+    <div class="row">
+      <div class="col-sm-11 offset-sm-1">
+        <%= @post.content %>
+        <% if @post.attachment.present? %>
+          <%= image_tag @post.attachment %>
+        <% end %>
+        <div class="row">
+          <div class="col-sm-12">
+            <%= render 'shared/created_at', activity: @post %>
+          </div>
+          <div class="col-sm-12">
+            <span class="like-count point-count text-muted small">
+              <%= pluralize(@post.cached_votes_up, 'like') %>
+            </span>
+            <% if belongs_to_user?(@post) %>
+              <%= link_to edit_post_path(@post), class: 'btn btn-primary btn-sm float-sm-right' do %>
+                <% fa_icon 'pencil' %>
+              <% end %>
+              <%= link_to post_path(@post), method: :delete, class:'btn btn-danger btn-sm float-sm-right', remote: true do %>
+                <% fa_icon 'trash' %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <%= render 'shared/actions', resource: @post %>
+  </div>
+</div>

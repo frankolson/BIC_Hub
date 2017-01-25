@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  # before_action :set_post, only: [:show, :edit, :update, :destroy]
-  def show
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+  def show
   end
 
   def create
@@ -17,9 +17,19 @@ class PostsController < ApplicationController
   end
 
   def update
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render :edit
+    end
   end
 
-  def update
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.js
+      format.html { redirect_to root_path }
+    end
   end
 
   private

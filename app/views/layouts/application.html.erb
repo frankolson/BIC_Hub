@@ -14,11 +14,15 @@
         <div class="container">
           <%= link_to 'BIC Hub', root_path, class: 'navbar-brand' %>
           <% if !user_signed_in? %>
-            <div class="float-sm-right right-buttons">
+            <div class="float-sm-right">
               <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default navbar-btn" %>
             </div>
-            <div class="float-sm-right right-buttons">
+            <div class="float-sm-right">
               <%= link_to "Sign in", new_user_session_path, class: "btn btn-default navbar-btn" %>
+            </div>
+          <% else %>
+            <div class="float-sm-right">
+              <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-default navbar-btn" %>
             </div>
           <% end %>
         </div>
