@@ -14,10 +14,12 @@
 //= require jquery_ujs
 //= require tether
 //= require bootstrap-sprockets
-//= require moment
-//= require bootstrap-datetimepicker
+//= require datetimepicker
 //= require_tree .
 
 $(document).ready(function(){
-  $("#event_when").datetimepicker();
+  $("#event_when").datetimepicker({
+    maxDate:'0',
+    format:'Y/m/d H:i'
+  });
 });
