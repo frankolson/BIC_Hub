@@ -14,5 +14,10 @@
 //= require jquery_ujs
 //= require tether
 //= require bootstrap-sprockets
-//= require jquery.datetimepicker
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .
+
+$(document).ready(function(){
+  $("#event_when").datetimepicker();
+});

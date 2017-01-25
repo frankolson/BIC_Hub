@@ -24,6 +24,8 @@ end
 gem 'devise'
 gem 'simple_form'
 gem 'carrierwave', '~> 1.0'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
 
 group :development, :test do
   gem 'byebug', platform: :mri

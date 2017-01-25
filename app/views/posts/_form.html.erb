@@ -1,7 +1,7 @@
 <div class="card card-block">
   <div class="card-text">
 
-    <%= simple_form_for @post do |f| %>
+    <%= simple_form_for(@post) do |f| %>
       <div class="form-group">
         <h4>Update Status</h4>
         <%= f.input :content, class: 'form-control', autofocus: true, label: false, placeholder: 'What\'s on your mind?' %>
