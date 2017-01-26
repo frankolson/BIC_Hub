@@ -22,7 +22,7 @@
             </div>
           <% else %>
             <div class="float-sm-right">
-              <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-default navbar-btn" %>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-default navbar-btn" %>
             </div>
           <% end %>
         </div>
