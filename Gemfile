@@ -35,7 +35,6 @@ gem 'acts_as_commentable'
 
 
 
-
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'letter_opener'
