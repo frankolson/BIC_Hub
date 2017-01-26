@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
-  # before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :destroy]
+
+  def show
+  end
 
   def new
     @event = Event.new
@@ -10,7 +13,16 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to root_path
     else
+      flash[:error] = @event.errors.full_messages.to_sentence
       render :new
+    end
+  end
+
+  def destroy
+    @event.destroy
+    respond_to do |format|
+      format.js
+      format.html { redirect_to root_path }
     end
   end
 

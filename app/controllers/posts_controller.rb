@@ -11,8 +11,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      flash[:error] = @post.errors.full_messages.first
-      redirect_to root_path 
+      flash[:error] = @post.errors.full_messages.to_sentence
+      redirect_to root_path
     end
   end
 
@@ -23,6 +23,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to @post
     else
+      flash[:error] = @post.errors.full_messages.to_sentence
       render :edit
     end
   end
