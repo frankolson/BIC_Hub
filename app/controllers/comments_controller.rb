@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @commentable.comments.new do |comment|
-      comment.comment = params[:comment]
+      comment.comment = params.require(:comment)[:comment]
       comment.user = current_user
     end
     @comment.save

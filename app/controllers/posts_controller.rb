@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @comments = @post.comments.all
   end
 
   def create

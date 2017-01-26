@@ -5,6 +5,9 @@
   <div class="form-group">
     <%= f.input :comment, placeholder: 'Enter Comment',
                           label: false,
+                          input_html: {
+                            id: 'comment_text'
+                          },
                           as: :text %>
   </div>
 

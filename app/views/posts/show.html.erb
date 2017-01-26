@@ -1,4 +1,4 @@
-<div id="post-<%= @post.id %>" class="col-md-6 offset-md-3">
+<div id="post-<%= @post.id %>" class="col-lg-6 offset-lg-3">
   <%= render 'post' %>
   <br>
   <div class="card card-block">
@@ -9,7 +9,9 @@
     <div class="card-text">
       <%= render 'comments/form', commentable: @post %>
       <br>
-      
+      <div class="comments">
+        <%= render(partial: @comments) || render('shared/no_content', resources: 'Comments')%>
+      </div>
     </div>
   </div>
 </div>
