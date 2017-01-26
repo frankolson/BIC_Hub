@@ -11,7 +11,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      redirect_to root_path, notice: @post.errors.full_messages.first
+      flash[:error] = @post.errors.full_messages.first
+      redirect_to root_path 
     end
   end
 
