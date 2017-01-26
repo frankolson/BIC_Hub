@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :find_commentable, only: :create
+  before_action :find_commentable
   respond_to :js
 
   def create

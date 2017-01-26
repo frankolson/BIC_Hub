@@ -10,7 +10,7 @@
       <%= render 'comments/form', commentable: @post %>
       <br>
       <div class="comments">
-        <%= render(partial: @comments) || render('shared/no_content', resources: 'Comments')%>
+        <%= render(partial: @comments, locals: { commentable: @post }) || render('shared/no_content', resources: 'Comments')%>
       </div>
     </div>
   </div>

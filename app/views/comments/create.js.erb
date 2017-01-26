@@ -1,5 +1,5 @@
 $("#<%= @commentable_type.downcase %>-<%= @commentable.id %> .comment-count").html("<%= pluralize(@commentable.comments_count, 'comments') %>");
 
-$("#<%= @commentable_type.downcase %>-<%= @commentable.id %> .comments").prepend("<%=j render(@comment) %>");
+$("#<%= @commentable_type.downcase %>-<%= @commentable.id %> .comments").prepend("<%=j render(partial: @comment, locals: { commentable: @commentable }) %>");
 
 $("#comment_text").val("");

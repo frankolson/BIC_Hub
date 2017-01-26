@@ -1,2 +1,26 @@
-<%= comment.comment %>
-<hr>
+<div id="comment-<%= comment.id %>" class="col-sm-12">
+  <div class="heading">
+    <h5 class="name"><%= comment.user.name %></h5>
+  </div>
+  <div class="content">
+    <div class="row">
+      <div class="col-sm-12">
+        <%= comment.comment %>
+      </div>
+      <div class="col-sm-12">
+        <% if belongs_to_user?(comment) %>
+          <%= link_to comment_path(comment,
+                                     commentable_type: commentable.class.to_s,
+                                     commentable_id: commentable.id
+                                  ),
+                                  method: :delete,
+                                  class: 'btn btn-danger btn-sm float-sm-right',
+                                  remote: true do %>
+            <% fa_icon 'trash' %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>
