@@ -18,6 +18,9 @@
             <span class="like-count point-count text-muted small">
               <%= pluralize(@post.cached_votes_up, 'like') %>
             </span>
+            <span class="comment-count point-count text-muted small">
+              <%= pluralize(@post.comments_count, 'comment') %>
+            </span>
             <% if belongs_to_user?(@post) %>
               <%= link_to edit_post_path(@post), class: 'btn btn-primary btn-sm float-sm-right' do %>
                 <% fa_icon 'pencil' %>

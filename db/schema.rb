@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125231757) do
+ActiveRecord::Schema.define(version: 20170125235655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170125231757) do
     t.integer  "cached_weighted_score",   default: 0
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
+    t.integer  "comments_count",          default: 0
     t.index ["cached_votes_down"], name: "index_posts_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_posts_on_cached_votes_score", using: :btree
     t.index ["cached_votes_total"], name: "index_posts_on_cached_votes_total", using: :btree
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170125231757) do
     t.index ["cached_weighted_average"], name: "index_posts_on_cached_weighted_average", using: :btree
     t.index ["cached_weighted_score"], name: "index_posts_on_cached_weighted_score", using: :btree
     t.index ["cached_weighted_total"], name: "index_posts_on_cached_weighted_total", using: :btree
+    t.index ["comments_count"], name: "index_posts_on_comments_count", using: :btree
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 

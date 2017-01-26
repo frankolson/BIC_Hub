@@ -4,16 +4,18 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @commentable.comments.new do |comment|
-      comment.comment = params[:comment_text]
+      comment.comment = params[:comment]
       comment.user = current_user
     end
     @comment.save
+    @commentable.reload
   end
 
   def destroy
     @comment = current_user.comments.find(params[:id])
     @comment_id = params[:id]
     @comment.destroy
+    @commentable.reload
   end
 
   private

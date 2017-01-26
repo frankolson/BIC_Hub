@@ -1,6 +1,7 @@
-<%= simple_form_for comments_path( commentable_type: commentable.class.to_s,
-                                   commentable_id: commentable.id),
-                                   method: :post, remote: true do |f| %>
+<%= simple_form_for @comment, url: comments_path(
+                                      commentable_type: commentable.class.to_s,
+                                      commentable_id: commentable.id),
+                              method: :post, remote: true do |f| %>
   <div class="form-group">
     <%= f.input :comment, placeholder: 'Enter Comment',
                           label: false,
