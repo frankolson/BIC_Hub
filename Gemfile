@@ -39,6 +39,14 @@ gem 'acts_as_commentable'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'letter_opener'
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'guard-rspec'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
 
 group :development do
