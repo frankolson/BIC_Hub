@@ -15,6 +15,12 @@
             <%= fa_icon'calendar' %> <%= @event.time.to_formatted_s(:short) %>
           </div>
           <div class="col-sm-12">
+            <span class="like-count point-count text-muted small">
+              <%= pluralize(@event.cached_votes_up, 'like') %>
+            </span>
+            <span class="comment-count point-count text-muted small">
+              <%= pluralize(@event.comments_count, 'comment') %>
+            </span>
             <% if belongs_to_user?(@event) %>
               <%= link_to event_path(@event), method: :delete, class:'btn btn-danger btn-sm float-sm-right' do %>
                 <% fa_icon 'trash' %>

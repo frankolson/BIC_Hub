@@ -2,6 +2,8 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :destroy]
 
   def show
+    @comment = Comment.new
+    @comments = @event.comments.all
   end
 
   def new
