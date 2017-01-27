@@ -29,7 +29,7 @@ RSpec.configure do |config|
   config.include Capybara::DSL
   # config.include EmailSpec::Helpers
   # config.include EmailSpec::Matchers
-  #config.include Devise::TestHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.order = "random"
 
   config.before(:suite) do
