@@ -14,6 +14,9 @@ class User < ApplicationRecord
   validates_presence_of :last_name
   validates_presence_of :email
 
+  mount_uploader :profile_pic,  PictureUploader
+  mount_uploader :timeline_pic, PictureUploader
+
   def name
     "#{self.first_name} #{self.last_name}"
   end

@@ -5,6 +5,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :first_name
       t.string :last_name
       t.string :bio
+      t.string :profile_pic
+      t.string :timeline_pic
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""

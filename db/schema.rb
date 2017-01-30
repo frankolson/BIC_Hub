@@ -83,6 +83,8 @@ ActiveRecord::Schema.define(version: 20170126233113) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "bio"
+    t.string   "profile_pic"
+    t.string   "timeline_pic"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
