@@ -18,3 +18,9 @@
   display: none !important;
   visibility: hidden !important;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 56px; // Logo will not overhang
+  }
+}
