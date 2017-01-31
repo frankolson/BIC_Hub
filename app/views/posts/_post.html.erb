@@ -1,4 +1,4 @@
-<div class="card card-block">
+<div class="card card-block post">
   <div class="card-heading">
     <h5 class="name"><%= @post.user.name %></h5>
     <span class="text-muted">created a <%= link_to 'post', @post %></span>
@@ -8,7 +8,9 @@
       <div class="col-sm-11 offset-sm-1">
         <%= @post.content %>
         <% if @post.attachment.present? %>
+          <div class="attachment">
           <%= image_tag @post.attachment %>
+          </div>
         <% end %>
         <div class="row">
           <div class="col-sm-12">
