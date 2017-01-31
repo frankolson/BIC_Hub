@@ -1,17 +1,25 @@
-<div id="event-<%= @event.id %>" class="col-lg-6 offset-lg-3">
-  <%= render 'event' %>
-  <br>
-  <div class="card card-block">
-    <div class="card-heading">
-      <h5>Comments</h5>
-      <hr>
-    </div>
-    <div class="card-text">
-      <%= render 'comments/form', commentable: @event %>
-      <br>
-      <div class="comments">
-        <%= render(partial: @comments, locals: { commentable: @event }) || render('shared/no_content', resources: 'Comments')%>
+<div class="row">
+  <div id="event-<%= @event.id %>" class="col-lg-6 offset-lg-3">
+    <%= render 'event' %>
+    <br>
+    <div class="card card-block">
+      <div class="card-heading">
+        <h5>Comments</h5>
+        <hr>
+      </div>
+      <div class="card-text">
+        <%= render 'comments/form', commentable: @event %>
+        <br>
+        <div class="comments">
+          <%= render(partial: @comments, locals: { commentable: @event }) || render('shared/no_content', resources: 'Comments')%>
+        </div>
       </div>
     </div>
   </div>
+
+  <% if @event.user == current_user %>
+    <div class="col-md-3">
+      <%= render 'shared/links' %>
+    </div>
+  <% end %>
 </div>

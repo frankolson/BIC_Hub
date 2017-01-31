@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-12">
+    <% if @user.timeline_pic.url %>
+      <div class="timeline_pic" style="background-image: url(<%= user.timeline_pic.url %>);"></div>
+    <% else %>
+      <div class="timeline_pic" style="background-image: url(/assets/timeline_pic_default.jpg);"></div>
+    <% end %>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'shared/user_info' %>
+  </div>
+
+  <div class="col-md-6">
+    <% if @user == current_user %>
+      <%= render 'posts/form', post: @post %>
+    <% end %>
+  </div>
+
+  <% if @user == current_user %>
+    <div class="col-md-3">
+      <%= render 'shared/links' %>
+    </div>
+  <% end %>
+</div>
