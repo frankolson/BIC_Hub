@@ -1,0 +1,5 @@
+<% if user.timeline_pic.url %>
+  <div class="timeline_pic" style="background-image: url(<%= user.timeline_pic.url %>);"></div>
+<% else %>
+  <div class="timeline_pic" style="background-image: url(/assets/timeline_pic_default.jpg);"></div>
+<% end %>
