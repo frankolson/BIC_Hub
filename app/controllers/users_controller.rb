@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user
+  before_action :set_user, except: [:index]
+
+  def index
+    @users = User.all.where.not(id: current_user.id)
+  end
 
   def show
     @post = Post.new

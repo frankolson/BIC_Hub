@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :events,   except: [:edit, :update]
   resources :comments, only: [:create, :destroy]
 
+  post :follow,   to: 'follows#create',  as: :follow
+  post :unfollow, to: 'follows#destroy', as: :unfollow
+
   post :like,   to: 'likes#create',  as: :like
   post :unlike, to: 'likes#destroy', as: :unlike
 

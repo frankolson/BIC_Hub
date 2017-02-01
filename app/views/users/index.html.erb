@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'shared/user_info', user: current_user %>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card card-block">
+      <div class="card-heading">
+        <h3>Find people to follow</h3>
+        <hr>
+      </div>
+      <div class="card-text">
+        <%= render(@users) || render('shared/no_resource', resources: 'Users') %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <%= render 'shared/links' %>
+  </div>
+</div>
