@@ -1,6 +1,6 @@
 <div id="comment-<%= comment.id %>" class="col-sm-12">
   <div class="heading">
-    <h5 class="name"><%= comment.user.name %></h5>
+    <h5 class="name"><%= link_to comment.user.name, user_path(comment.user) %></h5>
   </div>
   <div class="content">
     <div class="row">

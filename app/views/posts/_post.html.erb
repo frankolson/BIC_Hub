@@ -1,6 +1,6 @@
 <div class="card card-block post">
   <div class="card-heading">
-    <h5 class="name"><%= @post.user.name %></h5>
+    <h5 class="name"><%= link_to @post.user.name, user_path(@post.user) %></h5>
     <span class="text-muted">created a <%= link_to 'post', @post %></span>
   </div>
   <div class="card-text">

@@ -1,7 +1,7 @@
 <div class="card card-block">
   <div class="card-heading">
-    <h5 class="name"><%= @event.user.name %></h5>
-    <span class="text-muted">created a <%= link_to 'event', @event %></span>
+    <h5 class="name"><%= link_to @event.user.name, user_path(@event.user) %></h5>
+    <span class="text-muted">created an <%= link_to 'event', @event %></span>
   </div>
   <div class="card-text">
     <div class="row">
