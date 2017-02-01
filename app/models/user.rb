@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :comments
 
   acts_as_voter
+  acts_as_follower
+  acts_as_followable
 
   validates_presence_of :first_name
   validates_presence_of :last_name
