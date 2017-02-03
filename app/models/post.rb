@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  include PublicActivity::Model
+  tracked only: [:create, :like], owner: proc { |_controller, model| model.user }
+
   mount_uploader :attachment, PictureUploader
 
   belongs_to :user

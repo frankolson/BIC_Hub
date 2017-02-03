@@ -1,4 +1,6 @@
 class Follow < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked only: [:create], owner: Proc.new{ |controller, model| model.follower }
 
   extend ActsAsFollower::FollowerLib
   extend ActsAsFollower::FollowScopes

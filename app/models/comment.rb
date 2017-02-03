@@ -1,6 +1,8 @@
 class Comment < ActiveRecord::Base
 
   include ActsAsCommentable::Comment
+  include PublicActivity::Model
+  tracked only: [:create], owner: proc { |_controller, model| model.user }
 
   belongs_to :commentable, :polymorphic => true, counter_cache: true
 
