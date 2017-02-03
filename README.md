@@ -1,24 +1,20 @@
-# README
+# BIC Hub
+(Because I Can)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
 
-Things you may want to cover:
+This is meant as a fun project to see if I could build a social media platform. It should be noted that a  lot of my original influence came from the Socify [source code](https://github.com/scaffeinate/socify).
 
-* Ruby version
+## Running Locally
 
-* System dependencies
+Make sure you have [Ruby](https://www.ruby-lang.org) and [Bundler](http://bundler.io)
 
-* Configuration
+```sh
+git clone https://github.com/frankolson/BIC_Hub.git # or clone your own fork
+cd BIC_Hub
+bundle
+rails db:create db:migrate
+rails s
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The app should now be running on [localhost:3000](http://localhost:3000/).
