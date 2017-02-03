@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @post = Post.new
+    @activities = PublicActivity::Activity.all.order(created_at: :desc)
   end
 
   def landing

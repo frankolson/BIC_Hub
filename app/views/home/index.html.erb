@@ -4,15 +4,20 @@
   </div>
 
   <div class="col-md-6">
-    <%= render 'posts/form', post: @post %>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= render 'posts/form', post: @post %>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div id="activities" class="col-sm-12">
+        <%= render_activities(@activities)%>
+      </div>
+    </div>
   </div>
 
   <div class="col-md-3">
-    <div class="card card-block">
-      <div class="card-text">
-        <%= render 'shared/links' %>
-        <br>
-      </div>
-    </div>
+    <%= render 'shared/links' %>
   </div>
 </div>

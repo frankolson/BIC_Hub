@@ -3,8 +3,8 @@
     <%= render 'shared/user_info', user: current_user %>
   </div>
 
-  <div id="post-<%= @post.id %>" class="col-lg-6">
-    <%= render 'post' %>
+  <div id="post-<%= @post.id %>" class="col-md-6">
+    <%= render 'post', post: @post %>
     <br>
     <div class="card card-block">
       <div class="card-heading">
