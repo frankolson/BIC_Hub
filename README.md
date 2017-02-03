@@ -1,7 +1,5 @@
-# BIC Hub
-(Because I Can)
+# BIC Hub _(Because I Can)_
 
----
 
 This is meant as a fun project to see if I could build a social media platform. It should be noted that a  lot of my original influence came from the Socify [source code](https://github.com/scaffeinate/socify).
 
