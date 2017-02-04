@@ -1,0 +1,2 @@
+$('#activities').append('<%= escape_javascript render_activities(@activities) %>');
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@activities) %>');
