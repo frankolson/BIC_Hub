@@ -1,4 +1,4 @@
-<% if activity.trackable %>
+<% if activity && activity.trackable && activity.owner %>
   <div class="activity-like">
     <div class="info">
       <%= render 'shared/profile_pic', user: activity.owner %>

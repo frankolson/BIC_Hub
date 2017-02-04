@@ -1,15 +1,17 @@
-<div class="card card-block">
-  <div class="card-heading">
-    <h5 class="name"><%= link_to activity.owner.name, user_path(activity.owner) %></h5>
-    <span class="text-muted">commented on a <%= link_to 'post', activity.trackable.commentable %></span>
-  </div>
-  <div class="card-text">
-    <div class="row">
-      <div class="col-sm-11 offset-sm-1">
-        <h4><small><%= activity.trackable.comment %></small></h4>
-        <%= render 'shared/created_at', activity: activity %>
+<% if activity && activity.trackable && activity.owner %>
+  <div class="card card-block">
+    <div class="card-heading">
+      <h5 class="name"><%= link_to activity.owner.name, user_path(activity.owner) %></h5>
+      <span class="text-muted">commented on a <%= link_to 'post', activity.trackable.commentable %></span>
+    </div>
+    <div class="card-text">
+      <div class="row">
+        <div class="col-sm-11 offset-sm-1">
+          <h4><small><%= activity.trackable.comment %></small></h4>
+          <%= render 'shared/created_at', activity: activity %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<br>
+  <br>
+<% end %>

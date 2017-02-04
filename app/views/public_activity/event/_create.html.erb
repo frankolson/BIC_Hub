@@ -1,4 +1,6 @@
-<div id="event-<%= activity.trackable.id %>" class="activity-event">
-  <%= render activity.trackable, remote: true %>
-</div>
-<br>
+<% if activity && activity.trackable && activity.owner %>
+  <div id="event-<%= activity.trackable.id %>" class="activity-event">
+    <%= render activity.trackable, remote: true %>
+  </div>
+  <br>
+<% end %>

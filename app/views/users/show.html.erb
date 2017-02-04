@@ -13,8 +13,23 @@
 
   <div class="col-md-6">
     <% if @user == current_user %>
-      <%= render 'posts/form', post: @post %>
+      <div class="row">
+        <div class="col-sm-12">
+          <%= render 'posts/form', post: @post %>
+          <hr>
+        </div>
+      </div>
     <% end %>
+    <div class="row">
+      <div id="activities" class="col-sm-12">
+        <% if @activities.empty? %>
+          <%= render('shared/no_content', resources: 'activity') %>
+        <% else %>
+          <%= render_activities(@activities) %>
+        <% end %>
+      </div>
+      <%= will_paginate @activities %>
+    </div>
   </div>
 
   <% if @user == current_user %>
