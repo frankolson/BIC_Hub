@@ -3,7 +3,9 @@ class HomeController < ApplicationController
 
   def index
     @post = Post.new
-    @activities = PublicActivity::Activity.paginate(:page => params[:page], :per_page => 5)
+    @friends = current_user.all_following.unshift(@user)
+    @activities = PublicActivity::Activity.where(owner_id: @friends)
+                                          .paginate(:page => params[:page], :per_page => 5)
                                           .order(created_at: :desc)
   end
 
