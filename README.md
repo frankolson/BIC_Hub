@@ -10,7 +10,7 @@ Make sure you have [Ruby](https://www.ruby-lang.org) and [Bundler](http://bundle
 ```sh
 git clone https://github.com/frankolson/BIC_Hub.git # or clone your own fork
 cd BIC_Hub
-bundle
+bundle install
 rails db:create db:migrate
 rails s
 ```
