@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'shared/user_info', user: current_user %>
+  </div>
+
+  <div id="post-<%= @post.id %>" class="col-md-6">
+    <%= render 'posts/form', post: @post %>
+    <br>
+    <div class="card card-block">
+      <div class="card-heading">
+        <h5>Comments</h5>
+        <hr>
+      </div>
+      <div class="card-text">
+        <div class="comments">
+          <%= render(partial: @comments, locals: { commentable: @post }) || render('shared/no_content', resources: 'Comments')%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% if @post.user == current_user %>
+    <div class="col-md-3">
+      <%= render 'shared/links' %>
+    </div>
+  <% end %>
+</div>

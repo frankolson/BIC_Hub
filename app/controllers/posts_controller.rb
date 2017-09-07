@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @comments = @post.comments.all
   end
 
   def update
